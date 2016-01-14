@@ -1,0 +1,6 @@
+development:
+  sessions:
+    default:
+      database: issue_tracker
+      hosts:
+        - localhost:9292
