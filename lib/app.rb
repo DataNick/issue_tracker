@@ -1,3 +1,5 @@
+require_relative "models/issue"
+
 class App < Sinatra::Base
   get "/" do
     "Hello"
