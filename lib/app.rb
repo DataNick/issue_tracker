@@ -19,14 +19,14 @@ class App < Sinatra::Base
   end
 
   post "/issues" do
-    @issue = Issue.new params[:issue]
+    @issue = Issue.new(params[:issue])
     if @issue.save
       redirect "/"
       end
   end
 
   get "/issues/:id" do
-    @issue = Issue.find params[:id]
+    @issue = Issue.find(params[:id])
     haml :"issues/show"
   end
 
