@@ -22,7 +22,12 @@ class App < Sinatra::Base
     @issue = Issue.new params[:issue]
     if @issue.save
       redirect "/"
-    end
+      end
+  end
+
+  get "/issues/:id" do
+    @issue = Issue.find params[:id]
+    haml :"issues/show"
   end
 
 end
