@@ -25,4 +25,4 @@
   %ul.pagination
     -(1..@pagination.last_page).each do |page|
       %li{class: [ @pagination.current_page + 1 == page ? "active" : "" ]}
-        %a{href: "?page=#{page}" }= page
+        %a{href: "?page=#{page}" }=page
