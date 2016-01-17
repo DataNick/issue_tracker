@@ -1,3 +1,4 @@
+#is the controller for the application
 require_relative "models/issue"
 
 class App < Sinatra::Base
@@ -11,7 +12,8 @@ class App < Sinatra::Base
   end
 
   get "/issues" do
-    @issues = Issue.all
+    total_issues = 10
+    @issues = Issue.limit(total_issues).all
     haml :"issues/index"
   end
 
