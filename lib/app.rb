@@ -17,7 +17,7 @@ class App < Sinatra::Base
     @issues = Issue.limit(total_issues).skip((current_page - 1) * total_issues).all
 
     last_page = Issue.count / total_issues
-    last_page = last_page.succ if Issue.count % total_issues
+    last_page = last_page.succ if Issue.count % total_issues #succeeded
 
     @pagination = OpenStruct.new({
       last_page: last_page,
