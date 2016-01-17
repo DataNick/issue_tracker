@@ -13,7 +13,8 @@ class App < Sinatra::Base
 
   get "/issues" do
     total_issues = 10
-    @issues = Issue.limit(total_issues).all
+    current_page = params[:page].nil? ? 1 : params[:page].to_i
+    @issues = Issue.limit(total_issues).skip((current_page - 1) * total_issues).all
     haml :"issues/index"
   end
 
