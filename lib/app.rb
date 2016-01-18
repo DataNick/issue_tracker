@@ -1,6 +1,7 @@
 #is the controller for the application
 require_relative "models/issue"
 require_relative "models/comment"
+require_relative "models/project"
 
 class App < Sinatra::Base
   enable :sessions
