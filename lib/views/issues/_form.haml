@@ -15,6 +15,12 @@
       =issue.description
 
   %p
+    %label(for = "issue_project") Project
+    %select(name = "issue[project_id]")
+      -Project.all.each do |project|
+        %option{value: project.id, selected: project.id == issue.project.id ? "selected" : false}= project.name
+
+  %p
     %label(for = "issue_status") Status
     %select(name = "issue[status]")
       -Issue::STATUSES.each do |status|
