@@ -2,8 +2,8 @@
   =@issue.name
   %small
     from
-    %a(href="/issues/#{@issue.id}")
-      =@issue.name
+    %a(href="/projects/#{@issue.project.id}")
+      =@issue.project.name
 
 .well
   =@issue.description
