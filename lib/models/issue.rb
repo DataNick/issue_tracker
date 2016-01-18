@@ -4,6 +4,8 @@ class Issue
   include Mongoid::Document
   include Mongoid::Timestamps::Updated
 
+  validates_presence_of :name, :description
+
   #Define set of fields that belong to Issue
   field :name, type: String
   field :description, type: String
