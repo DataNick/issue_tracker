@@ -10,4 +10,7 @@ class Issue
   field :name, type: String
   field :description, type: String
   field :status, type: Symbol, default: :new
+
+  embeds_many :comments
+
 end
