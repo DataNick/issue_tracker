@@ -71,4 +71,9 @@ class App < Sinatra::Base
     end
   end
 
+  get "/projects" do
+    @projects = Project.all
+    haml :"projects/index"
+  end
+
 end
