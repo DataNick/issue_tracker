@@ -1,5 +1,6 @@
 #is the controller for the application
 require_relative "models/issue"
+require_relative "models/comment"
 
 class App < Sinatra::Base
   enable :sessions
@@ -57,6 +58,15 @@ class App < Sinatra::Base
       redirect "/"
     else
       haml :"issues/edit"
+    end
+  end
+
+  post "/issues/:id/comments" do
+    @issue = Issue.find(params[:id])
+    if @issue.comments.create(params[:comment])
+      redirect "issues/#{params[:id]}"
+    else
+      render :"issues/show"
     end
   end
 
