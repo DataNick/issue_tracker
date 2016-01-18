@@ -76,4 +76,9 @@ class App < Sinatra::Base
     haml :"projects/index"
   end
 
+  get "/projects/:id" do
+    @project = Project.find(params[:id])
+    haml :"projects/show"
+  end
+
 end
